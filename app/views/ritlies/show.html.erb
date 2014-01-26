@@ -18,7 +18,12 @@
 	</div>
 
 	<div class="row center">
-		<%= link_to @ritly.link, "/go/#{@ritly.random_string}", method: :patch %>
+		<h3 class="color"><%= @ritly.link %></h3>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-10"><h3 class="color">Click Here: <%= link_to "localhost:3000/go/#{@ritly.random_string}", "/go/#{@ritly.random_string}", method: :patch, class: "link"  %></h3></div>
 	</div>
 
 </div>
