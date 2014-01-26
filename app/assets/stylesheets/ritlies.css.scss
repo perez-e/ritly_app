@@ -1,3 +1,41 @@
 // Place all the styles related to the ritlies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.headline {
+	font-family: 'Fontdiner Swanky', cursive;
+	font-size: 44px;
+	color: #FB610C;
+}
+
+body {
+	background-color: #FFB111;
+}
+
+.index {
+	text-align: center;
+	margin: 200px auto;
+}
+
+.text-form {
+	width: 300px;
+	height: 34px;
+}
+
+.my-hidden-xs {
+	font-size: large;
+}
+
+@media (max-width: 400px) {
+  .my-hidden-xs {
+    display: none;
+  }
+}
+
+.btn-color {
+	background-color: #FF0000;
+}
+
+.btn-color:hover {
+	background-color: #410DFF;
+}

@@ -9,7 +9,8 @@ class RitliesController < ApplicationController
   	r.random_string = generate_str
   	r.visits = 0
   	link = params[:ritly][:link]
-  	link.slice!("http://")
+  	link.slice!("http://") if link.include?("http://")
+    link.slice!("https://") if link.include?("https://")
   	full_url = ["http://", link].join
   	r.link = full_url
   	r.save

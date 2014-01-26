@@ -1,7 +1,10 @@
-<h1>Ritl Me This</h1>
-
-<%= form_for :ritly, url: "/go" ,html: {class: "ritly-form"} do |f| %>
-	<%= f.label " http://" %>
-	<%= f.text_field :link, placeholder: "Paste URL Here              eg. www.google.com" %>
-	<%= f.submit "Ritylize" %>
-<% end %>
+<div class="index">
+	<h1 class="headline">Ritl Me This</h1>
+	<%= form_for :ritly, url: "/go" ,html: {class: "ritly-form form-inline", role: "form"} do |f| %>
+		<div class="form-group">
+			<%= f.label " http://", class: "my-hidden-xs" %>
+			<%= f.text_field :link, placeholder: "Paste URL Here            eg. www.google.com", class: "text-form" %>
+		</div>
+		<%= f.submit "Ritylize", class: "btn btn-primary btn-color" %>
+	<% end %>
+</div>
