@@ -22,6 +22,7 @@ class RitliesController < ApplicationController
   end
 
   def show
+    @yes = true
   	@ritly = Ritly.where(random_string: params[:random_str]).first
     @ritlies = Ritly.all.limit(5)
   end
@@ -35,8 +36,17 @@ class RitliesController < ApplicationController
   end
 
   def all
+    @yes = false
   	@links = Ritly.all
-  	@ritlies = Ritly.all.limit(5)
+  	@ritlies = Ritly.all.order(visits: :desc).limit(5)
+  end
+
+  def destroy
+    random_str = params[:random_str]
+    link = Ritly.where(random_string: random_str).first
+    link.destroy
+
+    redirect_to "/go"
   end
 
 end

@@ -8,6 +8,8 @@ RitlyApp::Application.routes.draw do
 
   get "/go", to: "ritlies#all"
 
+  delete "/go/:random_str", to: "ritlies#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
