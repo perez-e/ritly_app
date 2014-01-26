@@ -4,15 +4,18 @@ class RitliesController < ApplicationController
   end
 
   def create
-  	generate_str = SecureRandom.urlsafe_base64(10)
-  	r = Ritly.new
-  	r.random_string = generate_str
-  	r.visits = 0
+    r = Ritly.new
+
   	link = params[:ritly][:link]
   	link.slice!("http://") if link.include?("http://")
     link.slice!("https://") if link.include?("https://")
   	full_url = ["http://", link].join
   	r.link = full_url
+
+    generate_str = SecureRandom.urlsafe_base64(10)
+    r.random_string = generate_str
+    r.visits = 0
+
   	r.save
 
   	redirect_to action: :show, random_str: generate_str
@@ -20,6 +23,7 @@ class RitliesController < ApplicationController
 
   def show
   	@ritly = Ritly.where(random_string: params[:random_str]).first
+    @ritlies = Ritly.all.limit(5)
   end
 
   def redirect
@@ -32,7 +36,7 @@ class RitliesController < ApplicationController
 
   def all
   	@links = Ritly.all
-  	
+  	@ritlies = Ritly.all.limit(5)
   end
 
 end
