@@ -8,6 +8,7 @@
 	color: #FB610C;
 }
 
+
 body {
 	background-color: #FFB111;
 }
@@ -34,8 +35,45 @@ body {
 
 .btn-color {
 	background-color: #FF0000;
+	color: white;
 }
 
 .btn-color:hover {
 	background-color: #410DFF;
+	color: white;
 }
+
+.navbar-default {
+	background-color: #FB610C;
+}
+
+.navbar-default .navbar-brand {
+		color: #FFB111;
+}
+
+.preview {
+	width: 700px;
+	height: 350px;
+	display: block;
+	margin: 0 auto;	
+}
+
+.center {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+.center > a {
+	font-size: 24px;
+	text-decoration: none;
+	color: #FB610C;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #FFB111;
+}
+
+
+
+

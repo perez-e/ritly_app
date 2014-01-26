@@ -1,11 +1,24 @@
-<h1>URL</h1>
-<%= @ritly.link %>
+<%= render "navbar" %>
 
-<h1>Your Code</h1>
-<%= @ritly.random_string %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-10"><h2 class="headline">Your Code</h2></div>
+	</div>
 
-<h1>Ritly URL</h1>
-<%= link_to "localhost:3000/go/#{@ritly.random_string}", "/go/#{@ritly.random_string}", method: :patch %>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-10"><h2 class="headline"><%= @ritly.random_string %></h2></div>
+	</div>
 
-<h1>Visits</h1>
-<%= @ritly.visits %>
+	<div class="row">
+		<iframe src="<%= @ritly.link %>" class="preview">
+	  		<p>Your browser does not support iframes.</p>
+		</iframe>
+	</div>
+
+	<div class="row center">
+		<%= link_to @ritly.link, "/go/#{@ritly.random_string}", method: :patch %>
+	</div>
+
+</div>
