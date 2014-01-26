@@ -1,4 +1,13 @@
 RitlyApp::Application.routes.draw do
+  root to: "ritlies#index"
+  post "/go", to: "ritlies#create"
+
+  get "/go/:random_str/preview", to: "ritlies#show"
+
+  patch "/go/:random_str", to: "ritlies#redirect"
+
+  get "/go", to: "ritlies#all"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
