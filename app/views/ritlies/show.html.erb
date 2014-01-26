@@ -1,0 +1,11 @@
+<h1>URL</h1>
+<%= @ritly.link %>
+
+<h1>Your Code</h1>
+<%= @ritly.random_string %>
+
+<h1>Ritly URL</h1>
+<%= link_to "localhost:3000/go/#{@ritly.random_string}", "/go/#{@ritly.random_string}", method: :patch %>
+
+<h1>Visits</h1>
+<%= @ritly.visits %>

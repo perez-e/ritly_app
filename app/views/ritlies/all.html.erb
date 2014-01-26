@@ -1,0 +1,5 @@
+<h1>Your Ritlynks</h1>
+
+<% @links.each do |r| %>
+	<h3><%= r.link %> - <%= link_to "localhost:3000/go/#{r.random_string}/preview", action: :show, random_str: r.random_string %></h3>
+<% end %>
