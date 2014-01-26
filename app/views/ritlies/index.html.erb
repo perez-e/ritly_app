@@ -1,0 +1,7 @@
+<h1>Ritl Me This</h1>
+
+<%= form_for :ritly, url: "/go" ,html: {class: "ritly-form"} do |f| %>
+	<%= f.label " http://" %>
+	<%= f.text_field :link, placeholder: "Paste URL Here              eg. www.google.com" %>
+	<%= f.submit "Ritylize" %>
+<% end %>
