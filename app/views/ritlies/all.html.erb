@@ -1,5 +1,19 @@
-<h1>Your Ritlynks</h1>
+<%= render "navbar" %>
+<h1 class="headline">Your Ritlynks</h1>
 
-<% @links.each do |r| %>
-	<h3><%= r.link %> - <%= link_to "localhost:3000/go/#{r.random_string}/preview", action: :show, random_str: r.random_string %></h3>
-<% end %>
+<div class="container">
+	<table class="table table-hover">
+		<tr>
+			<th>URL</th>
+			<th>Ritlynk Preview</th>
+			<th>Delete</th>
+		</tr>
+		<% @links.each do |r| %>
+			<tr>
+				<td><%= shorten(r.link) %></td>
+				<td><%= link_to "localhost:3000/go/#{r.random_string}/preview", {action: :show, random_str: r.random_string}, class: "link" %></td>
+				<td><%= button_to "Remove", "/go/#{r.random_string}", method: :delete, class: "btn btn-default btn-color" %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
