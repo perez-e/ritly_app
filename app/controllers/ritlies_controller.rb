@@ -37,7 +37,7 @@ class RitliesController < ApplicationController
 
   def all
     @yes = false
-  	@links = Ritly.all
+  	@links = Ritly.all.order(visits: :desc)
   	@ritlies = Ritly.all.order(visits: :desc).limit(5)
   end
 

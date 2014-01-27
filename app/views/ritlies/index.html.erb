@@ -3,7 +3,7 @@
 	<%= form_for :ritly, url: "/go" ,html: {class: "ritly-form form-inline", role: "form"} do |f| %>
 		<div class="form-group">
 			<%= f.label " http://", class: "my-hidden-xs" %>
-			<%= f.text_field :link, placeholder: "Paste URL Here            eg. www.google.com", class: "text-form" %>
+			<%= f.text_field :link, placeholder: "Paste URL Here            ex. www.google.com", class: "text-form" %>
 		</div>
 		<%= f.submit "Ritylize", class: "btn btn-primary btn-color" %>
 	<% end %>
