@@ -24,7 +24,7 @@ class RitliesController < ApplicationController
   def show
     @yes = true
   	@ritly = Ritly.where(random_string: params[:random_str]).first
-    @ritlies = Ritly.all.limit(5)
+    @ritlies = Ritly.all.order(visits: :desc).limit(5)
   end
 
   def redirect
